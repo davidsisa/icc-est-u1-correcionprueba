@@ -23,6 +23,7 @@ public class MetodosOrdenamientoBusquedaGrupoB {
                 }
             }
         }
+        showPeople(people);
         
     }
 
@@ -39,19 +40,20 @@ public class MetodosOrdenamientoBusquedaGrupoB {
                 }
             }
         }
+        showPeople(people);
     }
 
     // Binary search by year
-    public int searchBinaryByYear(Carro[] people, int height) {
-        int tamanio = people.length;
+    public int searchBinaryByYear(Carro[] people, int year) {
+        
         int inicio = 0;
-        int fin = inicio - 1; 
+        int fin = people.length - 1; 
         while (inicio <= fin) { 
             int mitad = inicio + (fin - inicio)/2;
-            if (people[mitad].getYear() == height) {
+            if (people[mitad].getYear() == year) {
                 return mitad;
             }
-            if (people[mitad].getYear() < height) {
+            if (people[mitad].getYear() > year) {
                 inicio = mitad + 1 ;
             }else {
                 fin = mitad - 1;

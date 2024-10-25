@@ -78,10 +78,9 @@ public class MetodosOrdenamientoBusqueda {
 
     // Binary search by age
     public int searchBinaryByAge(Person[] people, int age) {
-
         int tamanio = people.length;
         int inicio = 0;
-        int fin = inicio - 1; 
+        int fin = tamanio - 1; 
         while (inicio <= fin) { 
             int mitad = inicio + (fin - inicio)/2;
             if (people[mitad].getAge() == age) {
@@ -99,15 +98,16 @@ public class MetodosOrdenamientoBusqueda {
     // Binary search by height
     public int searchBinaryByHeight(Person[] people, int height) {
         // TODO: Implement binary search by height
+
         int tamanio = people.length;
         int inicio = 0;
-        int fin = inicio - 1; 
+        int fin = tamanio - 1; 
         while (inicio <= fin) { 
             int mitad = inicio + (fin - inicio)/2;
-            if (people[mitad].getAge() == height) {
+            if (people[mitad].getHeight() == height) {
                 return mitad;
             }
-            if (people[mitad].getAge() < height) {
+            if (people[mitad].getHeight() < height) {
                 inicio = mitad + 1 ;
             }else {
                 fin = mitad - 1;
